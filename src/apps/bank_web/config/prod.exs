@@ -18,7 +18,7 @@ use Mix.Config
 
 config :bank_web, BankWeb.Endpoint,
   # http: [port: {:system, "PORT"}],
-  url: [scheme: "https", host: "acme-bank.herokuapp.com", port: 443],
+  url: [scheme: "https", host: "bank.audeldiaz.work", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE")
