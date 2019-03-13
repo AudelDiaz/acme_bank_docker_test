@@ -7,7 +7,7 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=db_name
   bank:
-    build: ./
+    image: audeldiaz/acme_bank
     depends_on:
       - db
     environment:
