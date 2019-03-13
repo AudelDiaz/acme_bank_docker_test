@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_USER=username
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db_name
+  bank:
+    build: ./
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=ecto://username:password@db:5432/db_name
+      - SECRET_KEY_BASE=zGjmcn7nipACaMRU62udolkIPMMNmao3
+      - MIX_ENV=prod
+    volumes:
+      - ./src:/src
+    ports:
+      - "4000:4000"
+      - "4001:4001"
